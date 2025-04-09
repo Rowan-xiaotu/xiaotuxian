@@ -11,6 +11,7 @@ export default defineConfig({
     vueDevTools(),
   ],
   resolve: {
+    // 实际的路径转化  @  ->  src
     alias: {
       '@': fileURLToPath(new URL('./src', import.meta.url))
     },
