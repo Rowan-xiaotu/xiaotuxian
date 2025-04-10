@@ -1,7 +1,29 @@
 <script setup>
+// import { getCategoryAPI } from "@/apis/layout";
+// import { onMounted,ref } from "vue";
+// const categoryList = ref([])
+// const getCategory = async () => {
+//   const res = await getCategoryAPI()
+//   console.log(res);
+//   categoryList.value = res.result
+// }
+
+// onMounted(() => {
+//   getCategory()
+// })
+
+
+
 // vueUse
 import { useScroll } from '@vueuse/core'
+import { useCategoryStore } from '@/stores/counter';
+
 const { y } = useScroll(window)
+
+
+// 使用pinia中的数据
+
+const categoryStore = useCategoryStore()
 </script>
 
 <template>
@@ -14,32 +36,8 @@ const { y } = useScroll(window)
       <li class="home">
         <RouterLink to="/">首页</RouterLink>
       </li>
-      <li>
-        <RouterLink to="/">居家</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/">美食</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/">服饰</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/">母婴</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/">个护</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/">严选</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/">数码</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/">运动</RouterLink>
-      </li>
-      <li>
-        <RouterLink to="/">杂项</RouterLink>
+      <li class="home" v-for="item in categoryStore.categoryList" :key="item.id">
+          <RouterLink to="/">{{ item.name }}</RouterLink>
       </li>
       </ul>
 
@@ -81,9 +79,9 @@ const { y } = useScroll(window)
     font-size: 16px;
     line-height: 32px;
     height: 32px;
-    padding-left: 40px;
-    padding-top: 5.6px;
-    padding-bottom: 5.6px;
+    text-align: center;
+    margin-right: 40px;
+    width: 38px;
 
   }
 
