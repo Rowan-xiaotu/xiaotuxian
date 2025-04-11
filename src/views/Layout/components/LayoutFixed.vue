@@ -37,7 +37,7 @@ const categoryStore = useCategoryStore()
         <RouterLink to="/">首页</RouterLink>
       </li>
       <li class="home" v-for="item in categoryStore.categoryList" :key="item.id">
-          <RouterLink to="/">{{ item.name }}</RouterLink>
+          <RouterLink :to="`/category/${item.id}`">{{ item.name }}</RouterLink>
       </li>
       </ul>
 
@@ -82,7 +82,17 @@ const categoryStore = useCategoryStore()
     text-align: center;
     margin-right: 40px;
     width: 38px;
-
+        a {
+            font-size: 16px;
+            line-height: 32px;
+            height: 32px;
+            display: inline-block;
+            color: #333;         /* 设置默认字体颜色 */
+            &:hover {
+              color: $xtxColor;   /* 鼠标悬停时字体颜色 */
+              border-bottom: 1px solid $xtxColor;
+            }
+          }
   }
 
   .container {
