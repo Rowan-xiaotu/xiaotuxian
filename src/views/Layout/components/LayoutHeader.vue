@@ -3,7 +3,7 @@
 
 
 
-import { useCategoryStore } from '@/stores/counter';
+import { useCategoryStore } from '@/stores/categoryStore';
 const categoryStore = useCategoryStore()
 import HeaderCart from './HeaderCart.vue'
 

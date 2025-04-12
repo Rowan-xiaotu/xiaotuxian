@@ -16,7 +16,7 @@
 
 // vueUse
 import { useScroll } from '@vueuse/core'
-import { useCategoryStore } from '@/stores/counter';
+import { useCategoryStore } from '@/stores/categoryStore';
 
 const { y } = useScroll(window)
 
