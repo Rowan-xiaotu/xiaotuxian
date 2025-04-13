@@ -18,7 +18,7 @@ export const useCartStore =  defineStore('cart', () => {
     // 2. 定义action - addCart
     const addCart = async (goods) => {
         const { skuId,count } = goods
-        if(isLogin) {
+        if(isLogin.value) {
             // 登录之后的加入购车逻辑
             await insertCartAPI({ skuId,count })
             updateNewList()
@@ -96,7 +96,8 @@ export const useCartStore =  defineStore('cart', () => {
         allCheck,
         selectedCount,
         selectedPrice,
-        clearCart
+        clearCart,
+        updateNewList
 
     }
 },{
