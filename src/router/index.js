@@ -18,7 +18,7 @@ import UserInfo from '@/views/Member/components/UserInfo.vue';
 import UserOrder from '@/views/Member/components/UserOrder.vue';
 
 const router = createRouter({
-  history: createWebHistory(import.meta.env.BASE_URL),
+  hash: createWebHistory(import.meta.env.BASE_URL),
   // path和component对应关系的位置
   routes: [
    {
