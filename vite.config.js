@@ -12,7 +12,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/xiaotuxian/', // 如果你的仓库名为 my-vue-app
+  base: './', // 如果你的仓库名为 my-vue-app
   plugins: [
     vue(),
     vueDevTools(),
