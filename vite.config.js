@@ -12,7 +12,6 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: '/vue-xiaotuxian/', // 设置为你的仓库名
   plugins: [
     vue(),
     vueDevTools(),
@@ -44,13 +43,4 @@ export default defineConfig({
       }
     }
   },
-  server: {
-    proxy: {
-      '/api': {  // 将所有以 /api 开头的请求代理到目标服务器
-        target: 'http://pcapi-xiaotuxian-front-devtest.itheima.net',
-        changeOrigin: true,  // 必须设置为 true 以允许跨域请求
-        rewrite: (path) => path.replace(/^\/api/, '') // 可选：重写路径，移除/api 前缀
-      }
-    }
-  }
 })
